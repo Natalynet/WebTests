@@ -31,7 +31,7 @@ public class UtilClass {
 
     public double minSalary(Employee[] emp){
         double min = emp[0].getSalary();
-        for(int i=0; i<emp.length; i++){
+        for(int i=1; i<emp.length; i++){
             if(emp[i].getSalary()<min){
                 min = emp[i].getSalary();
             }
@@ -41,7 +41,7 @@ public class UtilClass {
 
     public double maxSalary(Employee[] emp){
         double max = emp[0].getSalary();
-        for(int i=0; i<emp.length; i++){
+        for(int i=1; i<emp.length; i++){
             if(emp[i].getSalary()>max){
                 max = emp[i].getSalary();
             }
@@ -50,7 +50,7 @@ public class UtilClass {
     }
     public int maxSubbordinates(Manager[] manager){
         int max = manager[0].getNumberOfSubbordinates();
-        for(int i=0; i<manager.length; i++){
+        for(int i=1; i<manager.length; i++){
             if(manager[i].getNumberOfSubbordinates()>max){
                 max = manager[i].getNumberOfSubbordinates();
             }
@@ -60,11 +60,32 @@ public class UtilClass {
     }
     public double minSubbordinates(Manager[] manager){
         int min = manager[0].getNumberOfSubbordinates();
-        for(int i=0; i<manager.length; i++){
+        for(int i=1; i<manager.length; i++){
             if(manager[i].getNumberOfSubbordinates()<min){
                 min = manager[i].getNumberOfSubbordinates();
             }
         }
         return min;
     }
+
+    public double minIncrease (Manager[] manager){
+        double min = manager[0].getSalary()-manager[0].getBaseSalary();
+        for(int i=1; i<manager.length; i++){
+            if(manager[i].getSalary()-manager[i].getBaseSalary()<min){
+                min = manager[i].getSalary()-manager[i].getBaseSalary();
+            }
+        }
+        return min;
+    }
+    public double maxIncrease (Manager[] manager){
+        double max = manager[0].getSalary()-manager[0].getBaseSalary();
+        for(int i=1; i<manager.length; i++){
+            if(manager[i].getSalary()-manager[i].getBaseSalary()>max){
+                max = manager[i].getSalary()-manager[i].getBaseSalary();
+            }
+        }
+        return max;
+    }
+
+
 }
