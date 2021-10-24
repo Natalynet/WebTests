@@ -1,4 +1,4 @@
-public class Employeer19 implements IMonth{
+public class Employeer19{
    private String name;
    private int age;
     private String sex;
@@ -35,10 +35,10 @@ public class Employeer19 implements IMonth{
     public void setDaySalary(double salary) {
         this.daySalary = salary;
     }
-    public double geeMonthSalary(Employeer19[] array, IMonth month) {
+    public double getMonthSalary(Employeer19[] array, IMonth o, String month) {
         double result = 0;
         for(int i = 0; i< array.length; i++){
-            result += array[i].daySalary * month.workingDays;
+            result += array[i].daySalary * o.getMonthWorkingDays(month);
         }
         return result;
     }
