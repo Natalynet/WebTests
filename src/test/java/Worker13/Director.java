@@ -1,9 +1,15 @@
 package Worker13;
 
-public class Director extends Manager{
+public final class Director extends Worker{
 
+    private int numberOfSubbordinates;
     Director(String name, double baseSalary, int numberOfSubbordinates) {
-        super(name, baseSalary, numberOfSubbordinates);
+        super(name, baseSalary);
+        this.numberOfSubbordinates = numberOfSubbordinates;
+    }
+
+    public int getNumberOfSubbordinates(){
+        return numberOfSubbordinates;
     }
         @Override
         public double getSalary(){

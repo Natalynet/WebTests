@@ -1,6 +1,6 @@
 package Worker13;
 
-class Manager extends Worker {
+public final class Manager extends Worker {
     private int numberOfSubbordinates;
 
     Manager(String name, double baseSalary, int numberOfSubbordinates) {
@@ -19,8 +19,10 @@ class Manager extends Worker {
     @Override
     public double getSalary() {
 
+        final double percent = 100.0;
+        final double percentForWorker = 3;
         if (getNumberOfSubbordinates() != 0) {
-            return super.getSalary() * (getNumberOfSubbordinates() / 100.0 * 3);
+            return super.getSalary() * (getNumberOfSubbordinates() / percent * percentForWorker);
         } else {
             return super.getSalary();
         }
