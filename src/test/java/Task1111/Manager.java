@@ -1,6 +1,6 @@
 package Task1111;
 
-public class Manager extends Employee {
+public class Manager extends Task1111.Employee {
     private int numberOfEmployees;
 
     Manager(String name, int age, String sex, double salaryForDay, int numberOfEmployees) {

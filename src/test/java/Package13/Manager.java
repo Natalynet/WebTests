@@ -8,4 +8,7 @@ public interface Manager {
 
 
     double getSalary();
+
+    void setBaseSalary(double baseSalary);
+    double getBaseSalary();
 }
